@@ -118,7 +118,6 @@ const data = [
   Refresh the page to see the new article.
 */
 
-
 function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph}) {
 
   const articleDiv = document.createElement('div');
@@ -146,4 +145,15 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   secondP.textContent = secondParagraph;
   thirdP.textContent = thirdParagraph;
   expandBtn.textContent = "+";
+
+  expandBtn.addEventListener('click', event => {
+    articleDiv.classList.toggle('article-open');
+  })
+
+  return articleDiv;
 }
+
+const newsFeed = data.map(elem => {
+  const articles = document.querySelector('.articles');
+  return articles.appendChild(articleMaker(elem));
+})
