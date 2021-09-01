@@ -37,8 +37,6 @@ function menuMaker(array) {
   // Creating the elements
   const menuDiv = document.createElement('div');
   const list = document.createElement('ul');
-  // This may cause some bugs, we shall see later down the road
-  // const listItem = document.createElement('li');
   array.forEach(item => {
     const listItem = document.createElement('li');
     listItem.textContent = item;
@@ -48,7 +46,7 @@ function menuMaker(array) {
 
   //Creating the structure of the elements
   menuDiv.appendChild(list);
-  // list.appendChild(listItem);
+  
 
   //Giving the menu its class
   menuDiv.classList.add('menu');
